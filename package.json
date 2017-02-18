@@ -1,0 +1,28 @@
+{
+  "name": "ecobike",
+  "version": "1.0.0",
+  "description": "ecoBike is an app that will track how much good you do to the environment when u bike",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hktgroup/ecoBike.git"
+  },
+  "keywords": [
+    "ecoBike",
+    "HackNYU",
+    "QCGROUP"
+  ],
+  "author": "Kevin Reinoso, Kevin Izasa, Prateek Malli, Mohammad Sarke, Shaer Hasan ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hktgroup/ecoBike/issues"
+  },
+  "homepage": "https://github.com/hktgroup/ecoBike#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "passport": "^0.3.2"
+  }
+}

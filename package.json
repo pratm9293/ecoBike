@@ -1,49 +1,49 @@
 {
-    "name": "ecobike"
-    , "version": "1.0.0"
-    , "description": "ecoBike is an app that will track how much good you do to the environment when u bike"
-    , "main": "index.js"
-    , "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    }
-    , "repository": {
-        "type": "git"
-        , "url": "git+https://github.com/hktgroup/ecoBike.git"
-    }
-    , "keywords": [
-    "ecoBike"
-    , "HackNYU"
-    , "QCGROUP"
-  ]
-    , "author": "Kevin Reinoso, Kevin Izasa, Prateek Malli, Mohammad Sarke, Shaer Hasan "
-    , "license": "MIT"
-    , "bugs": {
-        "url": "https://github.com/hktgroup/ecoBike/issues"
-    }
-    , "homepage": "https://github.com/hktgroup/ecoBike#readme"
-    , "scripts": {
-        "lint": "eslint ."
-        , "test": "npm run lint && mocha"
-    }
-    , "devDependencies": {
-        "chai": "~3.4.1"
-        , "eslint": "2.7.0"
-        , "eslint-config-braintree": "^1.0.1"
-        , "mocha": "~2.3.3"
-        , "superagent": "~1.4.0"
-        , "supertest": "~1.1.0"
-    }
-    , "dependencies": {
-        "passport": "^0.3.2"
-        , "body-parser": "~1.14.1"
-        , "cookie-parser": "~1.4.0"
-        , "debug": "~2.2.0"
-        , "express": "^4.0.1"
-        , "jade": "~1.11.0"
-        , "morgan": "~1.6.1"
-        , "serve-favicon": "~2.3.2"
-        , "dotenv": "~1.2.0"
-        , "connect-flash": "~0.1.1"
-        , "express-session": "~1.12.1"
-    }
+  "name": "ecobike",
+  "version": "1.0.0",
+  "description": "ecoBike is an app that will track how much good you do to the environment when u bike",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hktgroup/ecoBike.git"
+  },
+  "keywords": [
+    "ecoBike",
+    "HackNYU",
+    "QCGROUP"
+  ],
+  "author": "Kevin Reinoso, Kevin Izasa, Prateek Malli, Mohammad Sarke, Shaer Hasan ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hktgroup/ecoBike/issues"
+  },
+  "homepage": "https://github.com/hktgroup/ecoBike#readme",
+  "devDependencies": {
+    "chai": "~3.4.1",
+    "eslint": "2.7.0",
+    "eslint-config-braintree": "^1.0.1",
+    "mocha": "~2.3.3",
+    "superagent": "~1.4.0",
+    "supertest": "~1.1.0"
+  },
+  "dependencies": {
+    "body-parser": "~1.14.1",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.4.0",
+    "debug": "~2.2.0",
+    "dotenv": "~1.2.0",
+    "express": "~4.13.1",
+    "express-session": "~1.12.1",
+    "jade": "~1.11.0",
+    "mongoose": "^4.8.3",
+    "morgan": "~1.6.1",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.6.0",
+    "serve-favicon": "~2.3.2"
+  }
 }

@@ -1,35 +1,46 @@
+'use strict'
 //injections
 var express = require('express');
 var cookie = require('cookie-parser');
-//routers
+//routes
 var routes = require('./routes/index');
 var api = require('./Api/index');
+//auth0
+var passport = require('passport');
+var jwt = require('express-jwt');
 //
 //anything else
 //
+var http = require('http')
+var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
-var app = express();
 //
 //view engine setup
 //
+app.set('port', process.env.PORT || 4000);
+app.use(cookie());
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use(cookie());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('express-session')({
+    secret: '3c0B!k3'
+    , resave: true
+    , saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 //
 //not found 404
 //
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
+
 //
-app.use('/Api', api);
-app.use('/', routes);
-module.export = app;
+app.use('/api', api);
+app.use('/pages', routes);
+http.createServer(app).listen(app.get('port'), function () {
+    console.log("testing  " + app.get('port'));
+});

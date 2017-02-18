@@ -1,15 +1,13 @@
-import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
-  selector: 'profile',
-  templateUrl: 'profile.html'
+  templateUrl: 'profile.html',
 })
-export class Profile {
-
-  constructor(public navCtrl: NavController) {
-
-  }
-
+export class ProfilePage {
+  
+  // We need to inject AuthService so that we can
+  // use it in the view
+  constructor(public auth: AuthService) {}
 }

@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-
-import { NavController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
-  selector: 'Track',
-  templateUrl: 'Track.html'
+  templateUrl: 'track.html',
 })
-export class Track {
-
-  constructor(public navCtrl: NavController) {
-
-  }
-
+export class TrackPage {
+  
+  // We need to inject AuthService so that we can
+  // use it in the view
+  constructor(public auth: AuthService) {}
 }
+
+
+export class AppModule {}

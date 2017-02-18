@@ -1,36 +1,50 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-import { Track } from '../pages/Track/Track';
-import { Stats } from '../pages/Stats/Stats';
-import { Profile } from '../pages/profile/profile';
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
+import { AuthApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ProfilePage } from '../pages/profile/profile';
 import { PingPage } from '../pages/ping/ping';
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
 import { AuthService } from '../services/auth/auth.service';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { TrackPage} from '../pages/track/track';
 
+let storage: Storage = new Storage();
+
+export function getAuthHttp(http) {
+  return new AuthHttp(new AuthConfig({
+    globalHeaders: [{'Accept': 'application/json'}],
+    tokenGetter: (() => storage.get('id_token'))
+  }), http);
+}
 
 @NgModule({
   declarations: [
-    MyApp,
-    Track,
-    Stats,
-    Profile,
-    TabsPage
+    AuthApp,
+    ProfilePage,
+    PingPage,
+    TabsPage,
+    TrackPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(AuthApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    Track,
-    Stats,
-    Profile,
-    TabsPage
+    AuthApp,
+    ProfilePage,
+    PingPage,
+    TabsPage,
+    TrackPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    AuthService,
+    {
+      provide: AuthHttp,
+      useFactory: getAuthHttp,
+      deps: [Http]
+    }
+  ]
 })
 export class AppModule {}

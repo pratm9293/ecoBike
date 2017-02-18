@@ -2,9 +2,9 @@
 
 Team Member   | Github user   |     Role  
 
-Kevin Reinoso | @kr3110       |   Back-End
-Kevin Isaza   | @kisazadev    |   Mobile Apps
-Prateek Malli | @pratm9293    |   DB
+Kevin Reinoso | @kr3110       |   Back-End.
+Kevin Isaza   | @kisazadev    |   Mobile Apps.
+Prateek Malli | @pratm9293    |   DB.
 
 EcoBike is an multiplatform app that our team work during Hack NYU. The app is base on the concept of health and behavior Change.
 EcoBike allows you to track your biking, calculate your burned calories and it will tell you by how much you have reduce your
